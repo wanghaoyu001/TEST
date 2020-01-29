@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/controller/BuyinController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/controller/IBuyinController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/mapper/BuyinMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/pojo/BuyIn.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/pojo/BuyInSearch.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/pojo/ProductInfo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/service/BuyinBiz.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/service/IBuyinBiz.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/util/AJAXUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/util/Pageutil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/util/jdbcUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

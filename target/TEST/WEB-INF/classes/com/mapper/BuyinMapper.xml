@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mapper.BuyinMapper">
+
+<!--采购进货保存-->
+<insert id="save">
+insert into buyin(buyinProductId,buyinNum,buyinPrice,buyinTotal,buyinPay,buyinDebt,buyinWarehouse,buyinSupplier,buyinTime,buyinUser,buyinRemarks) values(#{buyin.buyinProductId},#{buyin.buyinNum},#{buyin.buyinPrice},#{buyin.buyinTotal},#{buyin.buyinPay},#{buyin.buyinDebt},#{buyin.buyinWarehouse},#{buyin.buyinSupplier},#{buyin.buyinTime},#{buyin.buyinUser},#{buyin.buyinRemarks});
+insert into productinfo(productId,productName,productType,productSpecs) values(#{productInfo.productId},#{productInfo.productName},#{productInfo.productType},#{productInfo.productSpecs});
+</insert>
+
+<!--采购进货删除-->
+<delete id="delById" parameterType="String">
+delete from buyin where buyinProductId=#{ProductId};
+delete from productinfo where productId=#{ProductId};
+</delete>
+
+<!--采购进货更新-->
+<update id="update">
+update buyin set buyinProductId=#{buyin.buyinProductId},buyinNum=#{buyin.buyinNum},buyinPrice=#{buyin.buyinPrice},buyinTotal=#{buyin.buyinTotal},buyinPay=#{buyin.buyinPay},buyinDebt=#{buyin.buyinDebt},buyinWarehouse=#{buyin.buyinWarehouse},buyinSupplier=#{buyin.buyinSupplier},buyinTime=#{buyin.buyinTime},buyinUser=#{buyin.buyinUser},buyinRemarks=#{buyin.buyinRemarks} where buyinId=#{buyin.buyinId};
+update productinfo set productId=#{productInfo.productId},productName=#{productInfo.productName},productType=#{productInfo.productType},productSpecs=#{productInfo.productSpecs} where productId=#{BuyinProductId};
+</update>
+
+<!--采购进货查找-->
+<select id="find" resultType="BuyInSearch" parameterType="java.util.Map">
+select * from buyin inner join productinfo on buyin.buyinProductId=productinfo.productId
+<if test="BuyinId!=null and BuyinId!=''">
+where BuyinId=#{BuyinId}
+</if>
+<if test="pageSize!=null and pageSize!=''">
+order by buyinId LIMIT #{pageNo},#{pageSize}
+</if>
+</select>
+
+<!--采购进货记录总数-->
+<select id="getTotalCount" resultType="Integer">
+select count(*) from buyin inner join productinfo on buyin.buyinProductId=productinfo.productId
+</select>
+
+</mapper>
